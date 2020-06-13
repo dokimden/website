@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>web</title>
+    <link rel ="stylesheet" href="html_css\styles.css"/>
+    <script language="javascript" src="html_css\hello.js"></script>
+    <meta name="keywords" content="HTML, the meta trong HTML, hoc HTML co ban va nang cao" />
+    <meta name="description" content="The meta trong HTML." />
+    <meta name="revised" content="VietJack Team, 06/16/2016" />
+  <!--refresh va chuyen huong web -->
+    <meta http-equiv="refresh" content="500" url="https://vietjack.com" />
+  <!-- bảo quản các cookie trên Client và sau đó thông tin này có thể được sử dụng 
+  bởi các Server để theo dõi khách truy cập.-->
+  <meta http-equiv="cookie" content="userid=xyz; expires=Wednesday, 08-Aug-20 23:59:59 GMT;" />
+
+<meta name="author" content="do kim den" />
+
+<!--Theo mặc định, trình duyệt và Server sử dụng mã hóa ISO-8859-1 (Latin1) 
+ xử lý các trang Web. Ví dụ dưới là sự thiết lập mã hóa UTF-8.-->
+<meta http-equiv="Content-Type" content="text/html" charset=UTF-8" />
+
+<!--Để đáp ứng các trang tĩnh với các ký tự Trung Quốc truyền thống, trang Web 
+ chứa một thẻ <meta> để thiết lập mã hóa Big5:-->
+<meta http-equiv="Content-Type" content="text/html; charset=Big6" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+  <div id="sign">
+<form>
+   Account: <input type="text"name="account"value=""id="account"><br>
+   <p id="demo"></p><br>
+  Password:<input type="password"name="password"value=""id="password"><br>
+  <p id="demo1"></p><br>
+  <input type="button"value="Send"onclick="test()">
+</form>
+</div>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+function loadDoc() {
+  var http = new XMLHttpRequest();
+  http.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  http.open("GET", "ajax_info.txt", true);
+  http.send();
+}
+</script>
+</body>
+</html>
